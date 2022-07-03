@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Puzzle</title>
+    <style>
+        img {
+            width: 50%;
+            height: 30%;
+        }
+    </style>
+</head>
+
+<body>
+<img id="img1" src="image/canhchim1.jpg" alt="" onclick="clickImage1()">
+<img id="img2" src="image/raider2.jpg" alt="" onclick="clickImage2()">
+<img id="img3" src="image/congtroi3.jpg" alt="" onclick="clickImage3()">
+<script>
+    // khai bao bien
+    let count1 = 1;
+    let count2 = 2;
+    let count3 = 0;
+
+    // viet ham
+
+    function clickImage1() {
+        count1++;
+        if (count1 == 1) {
+            document.getElementById('img1').src="image/canhchim1.jpg";
+        }
+        else if (count1 == 2) {
+            document.getElementById('img1').src= "image/raider1.jpg";
+        }
+        else {
+            count1 = 0;
+            document.getElementById('img1').src= "image/congtroi1.jpg";
+        }
+        console.log('count1 -- ', count1)
+        display()
+    }
+
+    function clickImage2() {
+
+        count2++;
+        if (count2 == 1) {
+            document.getElementById('img2').src= "image/canhchim2.jpg";
+        } else if (count2 == 2) {
+            document.getElementById('img2').src= "image/raider2.jpg";
+        } else {
+            count2 = 0;
+            document.getElementById('img2').src= "image/congtroi2.jpg";
+        }
+        console.log('count2  -- ', count2)
+        display()
+    }
+
+    function clickImage3() {
+
+        count3++;
+        if (count3 == 1) {
+            document.getElementById('img3').src= "image/canhchim3.jpg";
+        } else if (count3 == 2) {
+            document.getElementById('img3').src= "image/raider3.jpg";
+        } else {
+            count3 = 0;
+            document.getElementById('img3').src= "image/congtroi3.jpg";
+        }
+        console.log('count3 -- ', count3)
+        display()
+    }
+
+    function display() {
+        console.log('count1 = ',count1)
+        console.log('count2 = ',count2)
+        console.log('count3 = ',count3)
+        if (count1 == count2 && count2 == count3) {
+            console.log('')
+            document.getElementById('img1').style.boxShadow = 'red 4px 4px 9px';
+            document.getElementById('img2').style.boxShadow = 'red 4px 4px 9px';
+            document.getElementById('img3').style.boxShadow  = 'red 4px 4px 9px';
+        } else {
+            document.getElementById('img1').style.boxShadow = 'blue 4px 4px 9px';
+            document.getElementById('img2').style.boxShadow = 'blue 4px 4px 9px';
+            document.getElementById('img3').style.boxShadow = 'blue 4px 4px 9px';
+        }
+    }
+
+</script>
+</body>
+</html>
